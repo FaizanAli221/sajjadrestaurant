@@ -342,7 +342,37 @@ if(form) {
   });
 }
 
-/* ========================= Footer & Scroll Animations ========================= */
+/* ========================= Event Inquiry form ========================= */
+const eventForm = $("#eventForm"), eventStatus = $("#eventStatus");
+
+if(eventForm) {
+  eventForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(eventForm));
+    if(!d.name.trim() || !d.phone.trim() || !d.date){
+      if(eventStatus){
+        eventStatus.textContent = "Please provide your name, phone and event date.";
+        eventStatus.classList.add("error");
+      }
+      return;
+    }
+    if(eventStatus) eventStatus.classList.remove("error");
+
+    const text =
+      `🎉 Event & Celebration Inquiry — Sajjad Restaurant\n` +
+      `Name: ${d.name}\nPhone: ${d.phone}\nEvent Type: ${d.eventType}\nDate: ${d.date}\nTime: ${d.time}\nGuests: ${d.guests}` +
+      (d.message?.trim() ? `\nDecor & Food Notes: ${d.message}` : "");
+
+    window.open(`https://wa.me/${PHONE_INTL}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+
+    if(eventStatus) {
+      eventStatus.textContent = `Event inquiry sent! Opening WhatsApp to talk to our Event Manager.`;
+    }
+  });
+}
+
+const eDateEl = $("#eDate");
+if(eDateEl) eDateEl.min = new Date().toISOString().split("T")[0];
 const yearEl = $("#year");
 if(yearEl) yearEl.textContent = new Date().getFullYear();
 
