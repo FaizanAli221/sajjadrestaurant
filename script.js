@@ -118,14 +118,18 @@ const SIGNATURE = ["Mixed Grill Platter","Reshmi Paneer Handi","Prawn Karahi","S
 
 /* ---- Gallery ---- */
 const GALLERY = [
-  { src:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70", alt:"Dining room lit for evening service at Do Darya" },
-  { src:FOOD.seekh,        alt:"Seekh kebabs on the charcoal grill" },
-  { src:FOOD.makhniKarahi, alt:"Chicken karahi served in a traditional wok" },
-  { src:FOOD.prawns,       alt:"Butterfly prawns with garlic dipping sauce" },
-  { src:FOOD.biryani,      alt:"Plate of Sindhi chicken biryani with raita" },
-  { src:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70", alt:"Open-air seating facing the Arabian Sea" },
-  { src:FOOD.brownie,      alt:"Sizzling brownie with ice cream" },
-  { src:FOOD.chinese,      alt:"Chicken manchurian cooked in wok" }
+  { src:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80", alt:"Open-air oceanfront dining deck over the Arabian Sea at Do Darya" },
+  { src:FOOD.mixPlatter,   alt:"Charcoal BBQ platter with seekh kebabs, tikka and malai boti" },
+  { src:FOOD.whiteKarahi,  alt:"Freshly cooked Chicken White Karahi in traditional metal wok" },
+  { src:FOOD.prawns,       alt:"Golden crumb-fried butterfly prawns with garlic dip" },
+  { src:FOOD.biryani,      alt:"Plate of authentic Sindhi chicken biryani with mint raita" },
+  { src:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80", alt:"Sunset oceanfront seating at Sajjad Restaurant DHA Phase 8" },
+  { src:FOOD.brownie,      alt:"Hot sizzling chocolate brownie with vanilla ice cream" },
+  { src:FOOD.chinese,      alt:"Wok-tossed Chicken Manchurian in sweet-chilli garlic sauce" },
+  { src:FOOD.seaBass,      alt:"Whole grilled sea bass with lemon butter glaze" },
+  { src:FOOD.butterNaan,   alt:"Freshly baked tandoori butter naan basket" },
+  { src:FOOD.mintMargarita,alt:"Chilled fresh mint margarita and lime soda drinks" },
+  { src:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80", alt:"Warm illuminated evening ambiance at Sajjad Restaurant" }
 ];
 
 /* ========================= render helpers ========================= */
