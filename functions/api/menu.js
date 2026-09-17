@@ -1,0 +1,64 @@
+const MENU_ITEMS = [
+  { "id": 1, "cat": "Starters", "name": "Chicken Malai Boti", "desc": "Cream-marinated tender chicken cubes off the charcoal grill.", "price": "1,150", "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=600&q=70" },
+  { "id": 2, "cat": "Starters", "name": "Chicken Chargha Bites", "desc": "Spiced crispy fried chicken, lemon and chaat masala.", "price": "990", "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=600&q=70" },
+  { "id": 3, "cat": "Starters", "name": "Butterfly Prawns", "desc": "Golden crumb-fried jumbo prawns served with garlic dip.", "price": "1,650", "img": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=600&q=70" },
+  { "id": 4, "cat": "Starters", "name": "Russian Salad", "desc": "Cold potato and fresh fruit salad in house cream dressing.", "price": "550", "img": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=600&q=70" },
+  { "id": 5, "cat": "BBQ", "name": "Chicken Seekh Kebab", "desc": "Hand-minced spiced chicken kebabs cooked over charcoal coals.", "price": "1,100", "img": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=70" },
+  { "id": 6, "cat": "BBQ", "name": "Beef Seekh Kebab", "desc": "Slow-charred seasoned beef seekh kebabs with mint raita.", "price": "1,250", "img": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=70" },
+  { "id": 7, "cat": "BBQ", "name": "Chicken Tikka (Leg)", "desc": "Classic red masala marinated chicken leg, grilled to order.", "price": "690", "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=600&q=70" },
+  { "id": 8, "cat": "BBQ", "name": "Mutton Chops", "desc": "Milk-tenderised juicy chops finished over hot coals.", "price": "2,150", "img": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=70" },
+  { "id": 9, "cat": "BBQ", "name": "Chicken Shashlik Sticks", "desc": "Marinated chicken, capsicum and onion skewers.", "price": "1,190", "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=600&q=70" },
+  { "id": 10, "cat": "BBQ", "name": "Mixed Grill Platter", "desc": "Seekh kebabs, tikka, malai boti and mutton chops platter.", "price": "3,450", "img": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=70" },
+  { "id": 11, "cat": "Karahi", "name": "Chicken White Karahi", "desc": "Silky yoghurt, black pepper and green chilli karahi gravy.", "price": "2,250", "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=70" },
+  { "id": 12, "cat": "Karahi", "name": "Chicken Makhni Karahi", "desc": "Rich tomato and butter gravy finished with fenugreek.", "price": "2,350", "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=70" },
+  { "id": 13, "cat": "Karahi", "name": "Mutton Karahi", "desc": "Fresh bone-in mutton, ginger and traditional whole spices.", "price": "3,950", "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=70" },
+  { "id": 14, "cat": "Karahi", "name": "Reshmi Paneer Handi", "desc": "Cottage cheese cubes in a silky cashew and cream handi.", "price": "1,890", "img": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=70" },
+  { "id": 15, "cat": "Karahi", "name": "Daal Makhni", "desc": "Black lentils simmered overnight with butter and fresh cream.", "price": "950", "img": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=70" },
+  { "id": 16, "cat": "Karahi", "name": "Butter Naan", "desc": "Freshly baked tandoori naan brushed with pure butter.", "price": "150", "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=70" },
+  { "id": 17, "cat": "Chinese", "name": "Hot & Sour Soup", "desc": "Classic chicken, egg drop, shredded veg and white pepper soup.", "price": "650", "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=70" },
+  { "id": 18, "cat": "Chinese", "name": "Chicken Manchurian", "desc": "Crispy chicken cubes in tangy sweet-chilli garlic sauce.", "price": "1,450", "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=70" },
+  { "id": 19, "cat": "Chinese", "name": "Chicken Chilli Dry", "desc": "Sliced chicken wok-tossed with capsicum, green chilli and onion.", "price": "1,490", "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=70" },
+  { "id": 20, "cat": "Chinese", "name": "Beef Black Pepper", "desc": "Tender sliced beef tossed in rich peppercorn sauce.", "price": "1,750", "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=70" },
+  { "id": 21, "cat": "Chinese", "name": "Chicken Chow Mein", "desc": "Stir-fried egg noodles with julienne chicken & garden veggies.", "price": "1,290", "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=70" },
+  { "id": 22, "cat": "Rice", "name": "Chicken Biryani", "desc": "Aromatic layered Sindhi-style chicken biryani served with raita.", "price": "890", "img": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=70" },
+  { "id": 23, "cat": "Rice", "name": "Mutton Pulao", "desc": "Flavorful yakhni rice with tender mutton, fried onion & kachumber.", "price": "1,190", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=70" },
+  { "id": 24, "cat": "Rice", "name": "Egg Fried Rice", "desc": "Wok-tossed basmati rice with fluffy egg and spring onions.", "price": "690", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=70" },
+  { "id": 25, "cat": "Rice", "name": "Garlic Rice", "desc": "Steamed basmati rice tossed in toasted garlic butter.", "price": "650", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=70" },
+  { "id": 26, "cat": "Seafood", "name": "Grilled Sea Bass", "desc": "Whole sea bass grilled with lemon-butter sauce.", "price": "2,950", "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=70" },
+  { "id": 27, "cat": "Seafood", "name": "Fried Fish Fillet", "desc": "Golden batter-fried fish fillets served with tamarind dip.", "price": "1,850", "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=70" },
+  { "id": 28, "cat": "Seafood", "name": "Prawn Karahi", "desc": "Fresh Arabian sea prawns in tomato and green chilli masala.", "price": "2,650", "img": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=600&q=70" },
+  { "id": 29, "cat": "Seafood", "name": "Chilli Garlic Prawns", "desc": "Wok-tossed jumbo prawns with chilli, garlic and fresh cilantro.", "price": "2,450", "img": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=600&q=70" },
+  { "id": 30, "cat": "Desserts", "name": "Sizzling Brownie", "desc": "Warm chocolate brownie with vanilla ice cream and hot fudge.", "price": "890", "img": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=70" },
+  { "id": 31, "cat": "Desserts", "name": "Gulab Jamun", "desc": "Traditional warm gulab jamun in cardamom syrup (2 pcs).", "price": "390", "img": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=70" },
+  { "id": 32, "cat": "Desserts", "name": "Kheer", "desc": "Slow-cooked rice pudding enriched with pistachios and saffron.", "price": "450", "img": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=70" },
+  { "id": 33, "cat": "Drinks", "name": "Fresh Lime Soda", "desc": "Refreshing lime soda, sweet or salted as preferred.", "price": "350", "img": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=70" },
+  { "id": 34, "cat": "Drinks", "name": "Mint Margarita", "desc": "Blended fresh mint leaves, lemon juice and crushed ice.", "price": "450", "img": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=70" },
+  { "id": 35, "cat": "Drinks", "name": "Kashmiri Chai", "desc": "Traditional pink tea with crushed almonds and pistachios.", "price": "420", "img": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=70" },
+  { "id": 36, "cat": "Drinks", "name": "Soft Drink", "desc": "Chilled regular 250ml bottle.", "price": "180", "img": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=70" }
+];
+
+export async function onRequestGet(context) {
+  const url = new URL(context.request.url);
+  const cat = url.searchParams.get('cat');
+  const search = url.searchParams.get('search');
+
+  let result = MENU_ITEMS;
+  if (cat && cat !== 'All') {
+    result = result.filter(item => item.cat.toLowerCase() === cat.toLowerCase());
+  }
+
+  if (search) {
+    const q = search.toLowerCase();
+    result = result.filter(item => 
+      item.name.toLowerCase().includes(q) || 
+      item.desc.toLowerCase().includes(q)
+    );
+  }
+
+  return new Response(JSON.stringify(result), {
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    }
+  });
+}

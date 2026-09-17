@@ -7,7 +7,7 @@
    - Posts table reservations to backend POST /api/reservations & WhatsApp
    ========================================================= */
 
-const API_BASE_URL  = window.API_BASE_URL || "http://localhost:5000/api";
+const API_BASE_URL  = window.API_BASE_URL || (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? "http://localhost:5000/api" : "/api");
 const PHONE_DISPLAY = "0333 2228111";
 const PHONE_INTL    = "923332228111";          // used for tel: and wa.me
 const FALLBACK_IMG  = "assets/placeholder.svg";
