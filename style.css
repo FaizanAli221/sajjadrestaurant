@@ -81,6 +81,12 @@ p{margin:0 0 1em}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+.nav a.active{color:var(--gold-soft); font-weight:500}
+.nav a.active::after{width:100% !important}
+
+/* ---------- page hero ---------- */
+.page-hero{padding-top:140px; padding-bottom:40px; background:linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%); border-bottom:1px solid var(--line)}
+
 /* ---------- hero ---------- */
 .hero{position:relative; min-height:100svh; display:flex; align-items:flex-end; padding-bottom:clamp(50px,8vw,90px); overflow:hidden}
 .hero-media{position:absolute; inset:0}
